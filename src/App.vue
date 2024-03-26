@@ -8,6 +8,7 @@ export default {
     return {
       count: 0, //reactive data
       formData: {},
+      message: "",
     };
   },
   methods: {
@@ -18,6 +19,9 @@ export default {
       } else {
         this.count--;
       }
+    },
+    receiveData(params) {
+      this.message = params;
     },
   },
   computed: {
@@ -45,7 +49,11 @@ export default {
     <h3>Computer Properties</h3>
     <span>Double Count computed: {{ doubleCount }}</span>
   </div>
-  <Child :greetings="'working with propr'" />
+  <div>
+    <h3>Working with events receiving data from Child</h3>
+    <span>Message from child: {{ message }}</span>
+  </div>
+  <Child @send-data="receiveData" :greetings="'working with propr'" />
 </template>
 
 <style scoped>
