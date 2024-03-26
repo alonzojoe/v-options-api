@@ -1,8 +1,13 @@
 <script>
+import Child from "./components/Child.vue";
 export default {
+  components: {
+    Child,
+  },
   data() {
     return {
       count: 0, //reactive data
+      formData: {},
     };
   },
   methods: {
@@ -40,6 +45,7 @@ export default {
     <h3>Computer Properties</h3>
     <span>Double Count computed: {{ doubleCount }}</span>
   </div>
+  <Child :greetings="'working with propr'" />
 </template>
 
 <style scoped>
