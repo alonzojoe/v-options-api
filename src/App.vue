@@ -20,6 +20,12 @@ export default {
       return this.count * 2;
     },
   },
+  watch: {
+    count(newValue, oldValue) {
+      console.log("New Value", newValue);
+      console.log("Old Value", oldValue);
+    },
+  },
 };
 </script>
 
