@@ -1,5 +1,6 @@
 <template>
   <div>{{ greetings }}</div>
+  <h5>Data message: {{ message }}</h5>
 </template>
 
 <script>
@@ -10,6 +11,14 @@ export default {
       default: "test",
       required: false,
     },
+  },
+  data(props) {
+    return {
+      message: "",
+    };
+  },
+  mounted() {
+    this.message = "Component is mounted";
   },
 };
 </script>
